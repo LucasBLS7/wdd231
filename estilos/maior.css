@@ -1,0 +1,59 @@
+@media (min-width: 768px) {
+    /* Navegação Horizontal Flex */
+    #menu-btn {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        width: auto;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    nav li a {
+        border-top: none;
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* Layout Multicolunas no Main com CSS Grid */
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "titulo titulo"
+            "certificados local"
+            "certificados atividades";
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    main h1 {
+        grid-area: titulo;
+        margin-bottom: 0.5rem;
+    }
+
+    .certificado {
+        grid-area: certificados;
+        margin-bottom: 0;
+    }
+
+    .localizacao {
+        grid-area: local;
+        margin-bottom: 0;
+    }
+
+    .atividades {
+        grid-area: atividades;
+        margin-bottom: 0;
+    }
+
+    /* Grade de cursos com 3 colunas */
+    .grade-cursos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
