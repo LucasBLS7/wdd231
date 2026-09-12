@@ -1,0 +1,65 @@
+[
+  {
+    "nome": "InovaTech Soluções",
+    "endereco": "Av. Comendador Gustavo Paiva, 2000 - Maceió/AL",
+    "telefone": "(82) 3311-0001",
+    "url": "https://inovatech.exemplo.com",
+    "imagem": "member-1.jpg",
+    "nivelAssociacao": 3,
+    "ramo": "Tecnologia da Informação"
+  },
+  {
+    "nome": "Café do Porto",
+    "endereco": "Rua Sá e Albuquerque, 120 - Maceió/AL",
+    "telefone": "(82) 3221-5500",
+    "url": "https://cafedoporto.exemplo.com",
+    "imagem": "member-2.jpg",
+    "nivelAssociacao": 2,
+    "ramo": "Gastronomia"
+  },
+  {
+    "nome": "Laboratório Diagnóstico Central",
+    "endereco": "Rua Fernandes Lima, 450 - Maceió/AL",
+    "telefone": "(82) 3326-8899",
+    "url": "https://diagnosticoal.exemplo.com",
+    "imagem": "member-3.jpg",
+    "nivelAssociacao": 3,
+    "ramo": "Saúde e Análises Clínicas"
+  },
+  {
+    "nome": "Brisa Mar Hotel",
+    "endereco": "Av. Álvaro Otacílio, 1020 - Maceió/AL",
+    "telefone": "(82) 3194-4000",
+    "url": "https://brisamarhotel.exemplo.com",
+    "imagem": "member-4.jpg",
+    "nivelAssociacao": 2,
+    "ramo": "Hotelaria e Turismo"
+  },
+  {
+    "nome": "EcoEnergia Alagoas",
+    "endereco": "Av. Menino Marcelo, 510 - Maceió/AL",
+    "telefone": "(82) 3432-1122",
+    "url": "https://ecoenergial.exemplo.com",
+    "imagem": "member-5.jpg",
+    "nivelAssociacao": 1,
+    "ramo": "Energia Solar"
+  },
+  {
+    "nome": "Litoral Contabilidade",
+    "endereco": "Rua Jangadeiros Alagoanos, 88 - Maceió/AL",
+    "telefone": "(82) 3231-9988",
+    "url": "https://litoralcontabil.exemplo.com",
+    "imagem": "member-6.jpg",
+    "nivelAssociacao": 1,
+    "ramo": "Serviços Financeiros"
+  },
+  {
+    "nome": "Maceió Logística & Cargas",
+    "endereco": "Rodovia AL-101 Sul, km 12 - Marechal Deodoro/AL",
+    "telefone": "(82) 3261-7000",
+    "url": "https://maceiolog.exemplo.com",
+    "imagem": "member-7.jpg",
+    "nivelAssociacao": 2,
+    "ramo": "Transporte e Logística"
+  }
+]

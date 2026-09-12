@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretório de Membros | Câmara de Comércio de Maceió</title>
+  <meta name="description" content="Guia e diretório oficial das empresas associadas à Câmara de Comércio de Maceió. Conheça nossos membros nos níveis Ouro, Prata e Membro.">
+  <meta name="author" content="Seu Nome Completo">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diretório de Membros | Câmara de Comércio de Maceió">
+  <meta property="og:description" content="Descubra empresas associadas, oportunidades de parceria e fornecedores certificados na região metropolitana.">
+  <meta property="og:url" content="https://seunome.github.io/wdd231/camara/diretorio.html">
+  <meta property="og:image" content="https://seunome.github.io/wdd231/camara/imagens/og-image.jpg">
+
+  <!-- Estilos (normalize SEMPRE antes do estilo principal) -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/diretorio.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <img src="imagens/logo-camara.png" alt="Logo da Câmara de Comércio" width="60" height="60">
+        <div>
+          <h1>Câmara de Comércio</h1>
+          <p class="tagline">Maceió & Região</p>
+        </div>
+      </div>
+      <button id="menu-btn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav id="primary-nav" class="nav-menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="descubra.html">Descubra</a></li>
+        <li><a href="diretorio.html" class="active">Diretório</a></li>
+        <li><a href="associar.html">Associe-se</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="diretorio-header">
+      <h2>Diretório Comercial</h2>
+      <div class="view-toggle" role="group" aria-label="Alterar visualização do diretório">
+        <button id="btn-grid" class="active" aria-pressed="true">Grade</button>
+        <button id="btn-list" aria-pressed="false">Lista</button>
+      </div>
+    </div>
+
+    <!-- Contêiner dinâmico dos membros -->
+    <div id="members-container" class="grid-view"></div>
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <h3>Câmara de Comércio de Maceió</h3>
+      <p>Av. da Paz, 1000 - Centro, Maceió - AL</p>
+      <p>contato@camaramaceio.org.br | (82) 3000-0000</p>
+    </div>
+    <div class="footer-dev">
+      <p>&copy; <span id="current-year"></span> | Lucas Bezerra de Lima Santos | WDD 231</p>
+      <p>Última Modificação: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>

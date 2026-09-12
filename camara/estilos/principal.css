@@ -1,0 +1,303 @@
+:root {
+  --cor-primaria: #1d66be;
+  --cor-secundaria: #e94560;
+  --cor-fundo: #f8f9fa;
+  --cor-card: #ffffff;
+  --cor-texto: #1a1a2e;
+  --cor-texto-mutado: #535c68;
+  --cor-borda: #dcdde1;
+  --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header & Navegação */
+header {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand img {
+  width: 150px;
+  height: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+#menu-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+#menu-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.nav-menu {
+  display: none;
+  background-color: #162447;
+}
+
+.nav-menu.open {
+  display: block;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.9rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background-color: var(--cor-secundaria);
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.diretorio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--cor-borda);
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-toggle button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-primaria);
+  background-color: #fff;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.view-toggle button.active {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+/* Visualização em Grade (Cards) */
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-view .member-card {
+  background: var(--cor-card);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 4px solid var(--cor-primaria);
+}
+
+.grid-view .member-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid var(--cor-borda);
+}
+
+.grid-view .member-card h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.15rem;
+}
+
+.grid-view .member-card .badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.grid-view .member-card p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-mutado);
+  margin-bottom: 0.4rem;
+}
+
+.grid-view .member-card a {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+  word-break: break-all;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Visualização em Lista */
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list-view .member-card {
+  background: var(--cor-card);
+  border-radius: 4px;
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.list-view .member-card img {
+  display: none; /* Oculta a imagem na lista simplificada */
+}
+
+.list-view .member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-view .member-card h3 {
+  font-size: 1.05rem;
+}
+
+.list-view .badge {
+  font-size: 0.75rem;
+  font-weight: bold;
+  width: fit-content;
+}
+
+/* Níveis de Associação */
+.badge-ouro { background: #fff3cd; color: #856404; }
+.badge-prata { background: #e2e3e5; color: #383d41; }
+.badge-membro { background: #d4edda; color: #155724; }
+
+/* Rodapé */
+footer {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+.footer-info, .footer-dev {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-info {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1rem;
+}
+
+.footer-info p, .footer-dev p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Responsividade Desktop */
+@media (min-width: 768px) {
+  #menu-btn {
+    display: none;
+  }
+
+  .nav-menu {
+    display: block;
+    background: transparent;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .nav-menu a {
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .footer-info, .footer-dev {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer-info {
+    align-items: center;
+  }
+}
