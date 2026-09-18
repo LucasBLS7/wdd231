@@ -7,14 +7,23 @@
   --cor-texto-mutado: #535c68;
   --cor-borda: #dcdde1;
   --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font-corpo: 'Roboto', sans-serif;
+  --font-titulos: 'Montserrat', sans-serif;
+
 }
 
 body {
+  font-family: var(--font-corpo);
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titulos);
+  font-weight: 700;
 }
 
 /* Header & Navegação */
