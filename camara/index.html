@@ -3,34 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diretório de Membros | Câmara de Comércio de Maceió</title>
-  <meta name="description" content="Guia e diretório oficial das empresas associadas à Câmara de Comércio de Maceió. Conheça nossos membros nos níveis Ouro, Prata e Membro.">
-  <meta name="author" content="Seu Nome Completo">
+  <title>Início | Câmara de Comércio de Maceió</title>
+  <meta name="description" content="Página inicial da Câmara de Comércio de Maceió. Conheça nossos eventos, previsão do tempo e empresas parceiras em destaque.">
+  <meta name="author" content="Lucas Bezerra de Lima Santos">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Diretório de Membros | Câmara de Comércio de Maceió">
-  <meta property="og:description" content="Descubra empresas associadas, oportunidades de parceria e fornecedores certificados na região metropolitana.">
-  <meta property="og:url" content="https://lucasbls7.github.io/wdd231/camara/diretorio.html">
-  <meta property="og:image" content="https://lucasbls7.github.io/wdd231/camara/og-image.jpg">
+  <meta property="og:title" content="Início | Câmara de Comércio de Maceió">
+  <meta property="og:description" content="Junte-se à nossa rede de negócios na região metropolitana de Maceió.">
+  <meta property="og:url" content="https://seunome.github.io/wdd231/camara/index.html">
+  <meta property="og:image" content="https://seunome.github.io/wdd231/camara/imagens/og-image.jpg">
 
-  <!-- Estilos (normalize SEMPRE antes do estilo principal) -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-
+  <!-- Estilos -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/principal.css">
-  
+  <link rel="stylesheet" href="estilos-inicial/estilo-inicial.css">
 
   <!-- Scripts -->
   <script src="scripts/main.js" defer></script>
-  <script src="scripts/diretorio.js" defer></script>
+  <!-- Adicione um script específico para a home se necessário (ex: carregar clima/empresas) -->
+  <script src="scripts/home.js" defer></script>
 </head>
 <body>
   <header>
@@ -59,16 +54,107 @@
   </header>
 
   <main>
-    <div class="diretorio-header">
-      <h2>Diretório Comercial</h2>
-      <div class="view-toggle" role="group" aria-label="Alterar visualização do diretório">
-        <button id="btn-grid" class="active" aria-pressed="true">Grade</button>
-        <button id="btn-list" aria-pressed="false">Lista</button>
-      </div>
-    </div>
+    <!-- Seção Hero Imagem -->
+    <section class="hero-section">
+      <picture>
+        <source media="(max-width: 768px)" srcset="imagens/hero-mobile.webp">
+        <img src="og-image.jpg" alt="Visão geral de Maceió" class="hero-img">
+      </picture>
+      <a href="palestra.html" class="btn-hero">Ingressos Palestra</a>
+    </section>
 
-    <!-- Contêiner dinâmico dos membros -->
-    <div id="members-container" class="grid-view"></div>
+    <h2 class="home-title">Início</h2>
+
+    <!-- Seção Superior: Eventos e Clima -->
+    <section class="top-widgets">
+      <!-- Eventos -->
+      <article class="widget-card">
+        <h3 class="widget-header">Eventos</h3>
+        <div class="widget-content">
+          <!-- Conteúdo dinâmico de eventos entrará aqui -->
+          <p>Nenhum evento próximo programado.</p>
+        </div>
+      </article>
+
+      <!-- Clima -->
+      <article class="widget-card">
+        <h3 class="widget-header">Clima</h3>
+        <div class="widget-content weather-content">
+          <div class="weather-main">
+            <span class="temp">22°C</span>
+            <span class="condition">Parcialmente Nublado</span>
+          </div>
+          <div class="weather-icon">
+            <img src="imagens/icone-nublado.png" alt="Ícone de nublado">
+          </div>
+          <ul class="weather-details">
+            <li>Máxima: 24°C</li>
+            <li>Mínima: 19°C</li>
+            <li>Umidade: 34%</li>
+            <li>Nascer do Sol: 7:30</li>
+            <li>Pôr do Sol: 20:59</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Previsão de Clima -->
+      <article class="widget-card">
+        <h3 class="widget-header">Previsão de Clima</h3>
+        <div class="widget-content forecast-content">
+          <p>Hoje: <strong>32°C</strong></p>
+          <p>Quarta-Feira: <strong>31°C</strong></p>
+          <p>Sexta-Feira: <strong>18°C</strong></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Seção Inferior: Destaques de Empresas -->
+    <section class="bottom-widgets">
+      <!-- Empresa 1 -->
+      <article class="spotlight-card">
+        <h3>Nome da Empresa</h3>
+        <p class="slogan">Slogan da Empresa</p>
+        <hr>
+        <div class="spotlight-info">
+          <div class="imagens/member-1.jpg">Logo</div>
+          <div class="contact-info">
+            <p><strong>EMAIL:</strong> info@gmail.com</p>
+            <p><strong>TELEFONE:</strong> 800-555-1234</p>
+            <p><strong>SITE:</strong> minhaempresa.com</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Empresa 2 -->
+      <article class="spotlight-card">
+        <h3>Nome da Empresa</h3>
+        <p class="slogan">Slogan da Empresa</p>
+        <hr>
+        <div class="spotlight-info">
+          <div class="img-placeholder">Logo</div>
+          <div class="contact-info">
+            <p><strong>EMAIL:</strong> info@gmail.com</p>
+            <p><strong>TELEFONE:</strong> 800-555-1234</p>
+            <p><strong>SITE:</strong> minhaempresa.com</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Empresa 3 -->
+      <article class="spotlight-card">
+        <h3>Nome da Empresa</h3>
+        <p class="slogan">Slogan da Empresa</p>
+        <hr>
+        <div class="spotlight-info">
+          <div class="img-placeholder">Logo</div>
+          <div class="contact-info">
+            <p><strong>EMAIL:</strong> info@gmail.com</p>
+            <p><strong>TELEFONE:</strong> 800-555-1234</p>
+            <p><strong>SITE:</strong> minhaempresa.com</p>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer>
@@ -78,7 +164,7 @@
       <p>contato@camaramaceio.org.br | (82) 3000-0000</p>
     </div>
     <div class="footer-dev">
-      <p>&copy; <span id="current-year"></span> | Lucas Bezerra de Lima Santos | WDD 231</p>
+      <p>&copy; <span id="current-year">2026</span> | Lucas Bezerra de Lima Santos | WDD 231</p>
       <p>Última Modificação: <span id="last-modified"></span></p>
     </div>
   </footer>

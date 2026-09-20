@@ -1,0 +1,193 @@
+/* =========================================
+   ESTILOS DA PÁGINA INICIAL (INDEX)
+   ========================================= */
+
+/* Seção Hero */
+.hero-section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+  background-color: #e0e0e0; /* Fallback para placeholder */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  display: block;
+  object-fit: cover;
+}
+
+.btn-hero {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: var(--cor-secundaria);
+  color: #fff;
+  border-color: var(--cor-secundaria);
+}
+
+.home-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--cor-borda);
+  padding-bottom: 0.5rem;
+}
+
+/* Grids da Home */
+.top-widgets, 
+.bottom-widgets {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Cartões Genéricos (Widgets) */
+.widget-card, 
+.spotlight-card {
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+}
+
+/* Cabeçalhos dos cartões superiores */
+.widget-header {
+  background-color: var(--cor-primaria); /* Usa o azul primário do projeto */
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.widget-content {
+  padding: 1.25rem;
+  background-color: #eaeaea; /* Fundo cinza como na imagem */
+  height: calc(100% - 50px);
+}
+
+/* Conteúdo de Clima */
+.weather-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-main .temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.weather-main .condition {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.weather-icon img {
+  width: 80px;
+  height: auto;
+}
+
+.weather-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.weather-details li {
+  margin-bottom: 0.3rem;
+}
+
+/* Previsão de Clima */
+.forecast-content p {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Destaques (Spotlights) */
+.spotlight-card {
+  padding: 1.5rem;
+  background-color: #eaeaea; /* Fundo cinza semelhante ao wireframe */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.spotlight-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.spotlight-card .slogan {
+  font-size: 0.85rem;
+  color: var(--cor-texto-mutado);
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.spotlight-card hr {
+  border: 0;
+  border-top: 2px solid var(--cor-borda);
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.spotlight-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.img-placeholder {
+  width: 90px;
+  height: 90px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #555;
+  color: #555;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.contact-info p {
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+/* Responsividade para Desktop */
+@media (min-width: 768px) {
+  .top-widgets {
+    grid-template-columns: 2fr 1fr 1fr; /* Eventos um pouco maior como no design */
+  }
+
+  .bottom-widgets {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
