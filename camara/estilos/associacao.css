@@ -1,0 +1,128 @@
+/* Layout Principal (Mobile First) */
+.membership-main {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilização do Formulário */
+.membership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Espaçamento padrão para acessibilidade tátil */
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.membership-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.membership-form input, 
+.membership-form select, 
+.membership-form textarea {
+    padding: 0.7rem;
+    margin-top: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* Foco amigável ao teclado (Tabulação) */
+.membership-form input:focus, 
+.membership-form select:focus, 
+.membership-form textarea:focus {
+    outline: 2px solid #0056b3;
+    border-color: #0056b3;
+}
+
+.submit-btn {
+    padding: 1rem;
+    background-color: #0056b3;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: #003d82;
+}
+
+/* Estilização dos Cartões e Animação */
+.cards-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    /* Configuração da animação de carregamento */
+    opacity: 0; 
+    animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+/* Atrasos em cascata para os cartões aparecerem um após o outro */
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.6s; }
+.card:nth-child(5) { animation-delay: 0.8s; }
+
+/* Keyframes definindo a mudança visual (Opacidade e Posição) */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botões do Modal e do Modal em si */
+.open-modal {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: #eee;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+dialog {
+    padding: 2rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    max-width: 400px;
+    margin: auto; /* Centraliza nativamente */
+}
+
+/* Fundo escuro atrás do modal (Backdrop) */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Layout Desktop */
+@media (min-width: 768px) {
+    .membership-main {
+        grid-template-columns: 1.5fr 1fr; /* Form mais largo, cartões mais estreitos */
+    }
+}

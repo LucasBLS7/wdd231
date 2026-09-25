@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associação - Câmara de Comércio</title>
+    <!-- Substitua pelos caminhos reais do seu projeto -->
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/principal.css"> 
+    <link rel="stylesheet" href="estilos/associacao.css"> 
+</head>
+<body>
+    <!-- Cabeçalho e Navegação padrão do seu projeto viriam aqui -->
+    <header>
+        <h1>Câmara de Comércio</h1>
+    </header>
+
+    <main class="membership-main">
+        <!-- SEÇÃO 1: FORMULÁRIO -->
+        <section class="form-section">
+            <h2>Pedido de Associação</h2>
+            <!-- O método GET envia os dados pela URL, capturados na página de agradecimento -->
+            <form action="agradecimento.html" method="get" class="membership-form">
+                
+                <!-- Cada campo está encapsulado na tag <label> para garantir a acessibilidade (leitores de tela) -->
+                <label>Nome:
+                    <input type="text" name="fname" required title="Informe seu primeiro nome" autocomplete="given-name">
+                </label>
+
+                <label>Sobrenome:
+                    <input type="text" name="lname" required title="Informe seu sobrenome" autocomplete="family-name">
+                </label>
+
+                <!-- Pattern utiliza Expressão Regular: permite letras (A-Z, a-z), espaços (\s) e hifens (\-), mínimo de 7 caracteres -->
+                <label>Cargo na Organização:
+                    <input type="text" name="title" title="Deve conter pelo menos 7 caracteres (apenas letras, espaços e hifens)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                </label>
+
+                <!-- Tipo email já faz a validação nativa do formato (ter @ e domínio) -->
+                <label>E-mail:
+                    <input type="email" name="email" required title="Informe um e-mail válido" autocomplete="email" placeholder="exemplo@email.com">
+                </label>
+
+                <!-- Tipo tel exibe o teclado numérico em dispositivos móveis -->
+                <label>Celular:
+                    <input type="tel" name="mobile" required title="Informe seu número de celular" autocomplete="tel">
+                </label>
+
+                <label>Empresa / Organização:
+                    <input type="text" name="business" required title="Nome da sua organização" autocomplete="organization">
+                </label>
+
+                <label>Nível de Associação:
+                    <select name="membership" required title="Escolha um nível de associação">
+                        <option value="" disabled selected>Selecione um nível...</option>
+                        <option value="np">Associação NP (Sem fins lucrativos)</option>
+                        <option value="bronze">Associação Bronze</option>
+                        <option value="silver">Associação Prata</option>
+                        <option value="gold">Associação Ouro</option>
+                    </select>
+                </label>
+
+                <label>Descrição da Atividade/Organização:
+                    <textarea name="description" title="Descreva brevemente sua organização" rows="4"></textarea>
+                </label>
+
+                <!-- Campo oculto: preenchido via JavaScript no carregamento para registrar a data/hora exata -->
+                <input type="hidden" name="timestamp" id="timestamp">
+
+                <!-- Botão de submissão. O nó de texto é "Enviar Pedido" -->
+                <button type="submit" class="submit-btn">Enviar Pedido</button>
+            </form>
+        </section>
+
+        <!-- SEÇÃO 2: CARTÕES DE ASSOCIAÇÃO -->
+        <section class="cards-section">
+            <h2>Níveis e Benefícios</h2>
+            
+            <div class="card card-np">
+                <h3>Associação NP</h3>
+                <p>Para organizações sem fins lucrativos.</p>
+                <button class="open-modal" data-modal="modal-np">Ver Benefícios</button>
+            </div>
+
+            <div class="card card-bronze">
+                <h3>Associação Bronze</h3>
+                <p>Plano básico para pequenas empresas.</p>
+                <button class="open-modal" data-modal="modal-bronze">Ver Benefícios</button>
+            </div>
+
+            <div class="card card-silver">
+                <h3>Associação Prata</h3>
+                <p>Crescimento e visibilidade moderada.</p>
+                <button class="open-modal" data-modal="modal-silver">Ver Benefícios</button>
+            </div>
+
+            <div class="card card-gold">
+                <h3>Associação Ouro</h3>
+                <p>Nível máximo de publicidade e eventos.</p>
+                <button class="open-modal" data-modal="modal-gold">Ver Benefícios</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAIS (Dialogs): Ficam ocultos até serem chamados pelo JS -->
+    <dialog id="modal-np">
+        <h3>Benefícios - NP</h3>
+        <p>Acesso à rede da câmara sem taxa anual para ONGs aprovadas.</p>
+        <button class="close-modal">Fechar</button>
+    </dialog>
+
+    <dialog id="modal-bronze">
+        <h3>Benefícios - Bronze</h3>
+        <p>Inclusão no diretório online e convite para 2 eventos anuais.</p>
+        <button class="close-modal">Fechar</button>
+    </dialog>
+
+    <dialog id="modal-silver">
+        <h3>Benefícios - Prata</h3>
+        <p>Tudo do Bronze + descontos em treinamentos e 1 anúncio na home.</p>
+        <button class="close-modal">Fechar</button>
+    </dialog>
+
+    <dialog id="modal-gold">
+        <h3>Benefícios - Ouro</h3>
+        <p>Tudo do Prata + posições de destaque, acesso VIP e palestras.</p>
+        <button class="close-modal">Fechar</button>
+    </dialog>
+
+    <!-- Rodapé padrão -->
+    <footer>
+        <p>&copy; 2026 Câmara de Comércio</p>
+    </footer>
+
+    <!-- Script de manipulação -->
+    <script src="scripts/associacao.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agradecimento - Câmara de Comércio</title>
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <style>
+        .thank-you-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f4f8fa;
+            border-radius: 8px;
+            border-left: 5px solid #0056b3;
+        }
+        .data-list {
+            margin-top: 1.5rem;
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .data-list p { margin: 0.5rem 0; font-family: monospace; font-size: 1.1rem; }
+        strong { color: #333; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Câmara de Comércio</h1>
+    </header>
+
+    <main>
+        <div class="thank-you-container">
+            <h2>Obrigado pelo seu envio!</h2>
+            <p>Seu pedido de associação foi recebido com sucesso. Abaixo estão os dados registrados no sistema:</p>
+            
+            <!-- Divisória onde o JS vai injetar os resultados -->
+            <div class="data-list">
+                <p><strong>Candidato:</strong> <span id="res-nome"></span></p>
+                <p><strong>E-mail:</strong> <span id="res-email"></span></p>
+                <p><strong>Celular:</strong> <span id="res-mobile"></span></p>
+                <p><strong>Empresa/Organização:</strong> <span id="res-business"></span></p>
+                <p><strong>Recebido em:</strong> <span id="res-timestamp"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Câmara de Comércio</p>
+    </footer>
+
+    <script>
+        // Cria um objeto URLSearchParams passando a string da URL atual (ex: ?fname=Lucas&lname=Santos...)
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Captura e injeta os valores. Usamos || '' para evitar imprimir "null" caso um campo falhe
+        const nomeCompleto = (urlParams.get('fname') || '') + ' ' + (urlParams.get('lname') || '');
+        document.getElementById('res-nome').textContent = nomeCompleto;
+        
+        document.getElementById('res-email').textContent = urlParams.get('email') || 'Não fornecido';
+        document.getElementById('res-mobile').textContent = urlParams.get('mobile') || 'Não fornecido';
+        document.getElementById('res-business').textContent = urlParams.get('business') || 'Não fornecido';
+
+        // Formata o Timestamp bruto para um formato local brasileiro legível
+        const rawTimestamp = urlParams.get('timestamp');
+        if (rawTimestamp) {
+            const dateObj = new Date(rawTimestamp);
+            document.getElementById('res-timestamp').textContent = dateObj.toLocaleString('pt-BR');
+        } else {
+            document.getElementById('res-timestamp').textContent = 'Data não registrada';
+        }
+    </script>
+</body>
+</html>
