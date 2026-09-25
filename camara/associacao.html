@@ -1,28 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Associação - Câmara de Comércio</title>
-    <!-- Substitua pelos caminhos reais do seu projeto -->
-    <link rel="stylesheet" href="estilos/normalize.css">
-    <link rel="stylesheet" href="estilos/principal.css"> 
-    <link rel="stylesheet" href="estilos/associacao.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | Câmara de Comércio de Maceió</title>
+  <meta name="description" content="Página inicial da Câmara de Comércio de Maceió. Conheça nossos eventos, previsão do tempo e empresas parceiras em destaque.">
+  <meta name="author" content="Lucas Bezerra de Lima Santos">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Início | Câmara de Comércio de Maceió">
+  <meta property="og:description" content="Junte-se à nossa rede de negócios na região metropolitana de Maceió.">
+  <meta property="og:url" content="https://lucasbls7.github.io/wdd231/camara/index.html">
+  <meta property="og:image" content="https://lucasbls7.github.io/wdd231/camara/imagens/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+  <link rel="stylesheet" href="estilos/associacao.css">
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+  <!-- Adicione um script específico para a home se necessário (ex: carregar clima/empresas) -->
+  <script src="scripts/home.js" defer></script>
 </head>
 <body>
-    <!-- Cabeçalho e Navegação padrão do seu projeto viriam aqui -->
+    <!-- Cabeçalho -->
     <header>
-        <h1>Câmara de Comércio</h1>
-    </header>
+    <div class="header-container">
+      <div class="brand">
+        <img src="imagens/logo-camara.webp" alt="Logo da Câmara de Comércio" width="60" height="60">
+        <div>
+          <h1>Câmara de Comércio</h1>
+          <p class="tagline">Maceió & Região</p>
+        </div>
+      </div>
+      <button id="menu-btn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav id="primary-nav" class="nav-menu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="descubra.html">Descubra</a></li>
+        <li><a href="diretorio.html">Diretório</a></li>
+        <li><a href="associacao.html" class="active">Associe-se</a></li>
+      </ul>
+    </nav>
+  </header>
 
     <main class="membership-main">
-        <!-- SEÇÃO 1: FORMULÁRIO -->
         <section class="form-section">
             <h2>Pedido de Associação</h2>
-            <!-- O método GET envia os dados pela URL, capturados na página de agradecimento -->
-            <form action="agradecimento.html" method="get" class="membership-form">
+            
+            <!-- Correção: Form action alterado para thankyou.html -->
+            <form action="thankyou.html" method="get" class="membership-form">
                 
-                <!-- Cada campo está encapsulado na tag <label> para garantir a acessibilidade (leitores de tela) -->
                 <label>Nome:
                     <input type="text" name="fname" required title="Informe seu primeiro nome" autocomplete="given-name">
                 </label>
@@ -31,17 +74,14 @@
                     <input type="text" name="lname" required title="Informe seu sobrenome" autocomplete="family-name">
                 </label>
 
-                <!-- Pattern utiliza Expressão Regular: permite letras (A-Z, a-z), espaços (\s) e hifens (\-), mínimo de 7 caracteres -->
                 <label>Cargo na Organização:
                     <input type="text" name="title" title="Deve conter pelo menos 7 caracteres (apenas letras, espaços e hifens)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
                 </label>
 
-                <!-- Tipo email já faz a validação nativa do formato (ter @ e domínio) -->
                 <label>E-mail:
                     <input type="email" name="email" required title="Informe um e-mail válido" autocomplete="email" placeholder="exemplo@email.com">
                 </label>
 
-                <!-- Tipo tel exibe o teclado numérico em dispositivos móveis -->
                 <label>Celular:
                     <input type="tel" name="mobile" required title="Informe seu número de celular" autocomplete="tel">
                 </label>
@@ -50,6 +90,7 @@
                     <input type="text" name="business" required title="Nome da sua organização" autocomplete="organization">
                 </label>
 
+                <!-- Correção: Garantindo que os values dos options correspondam exatamente ao exigido -->
                 <label>Nível de Associação:
                     <select name="membership" required title="Escolha um nível de associação">
                         <option value="" disabled selected>Selecione um nível...</option>
@@ -64,15 +105,13 @@
                     <textarea name="description" title="Descreva brevemente sua organização" rows="4"></textarea>
                 </label>
 
-                <!-- Campo oculto: preenchido via JavaScript no carregamento para registrar a data/hora exata -->
                 <input type="hidden" name="timestamp" id="timestamp">
 
-                <!-- Botão de submissão. O nó de texto é "Enviar Pedido" -->
                 <button type="submit" class="submit-btn">Enviar Pedido</button>
             </form>
         </section>
 
-        <!-- SEÇÃO 2: CARTÕES DE ASSOCIAÇÃO -->
+        <!-- (A seção de cartões e modais continua exatamente igual ao modelo anterior) -->
         <section class="cards-section">
             <h2>Níveis e Benefícios</h2>
             
@@ -102,7 +141,7 @@
         </section>
     </main>
 
-    <!-- MODAIS (Dialogs): Ficam ocultos até serem chamados pelo JS -->
+    <!-- Modais (Dialogs) -->
     <dialog id="modal-np">
         <h3>Benefícios - NP</h3>
         <p>Acesso à rede da câmara sem taxa anual para ONGs aprovadas.</p>
@@ -127,12 +166,18 @@
         <button class="close-modal">Fechar</button>
     </dialog>
 
-    <!-- Rodapé padrão -->
     <footer>
-        <p>&copy; 2026 Câmara de Comércio</p>
-    </footer>
+    <div class="footer-info">
+      <h3>Câmara de Comércio de Maceió</h3>
+      <p>Av. da Paz, 1000 - Centro, Maceió - AL</p>
+      <p>contato@camaramaceio.org.br | (82) 3000-0000</p>
+    </div>
+    <div class="footer-dev">
+      <p>&copy; <span id="current-year">2026</span> | Lucas Bezerra de Lima Santos | WDD 231</p>
+      <p>Última Modificação: <span id="last-modified"></span></p>
+    </div>
+  </footer>
 
-    <!-- Script de manipulação -->
     <script src="scripts/associacao.js"></script>
 </body>
 </html>
